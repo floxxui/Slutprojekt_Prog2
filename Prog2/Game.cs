@@ -7,32 +7,32 @@ namespace Prog2
         public override GameState VisualiseMenu()
         {
             Console.Clear();
-            System.Console.WriteLine("");
             System.Console.WriteLine();
 
-            System.Console.WriteLine("    ");
-            System.Console.WriteLine("    ");
-            System.Console.WriteLine("    ");
+            System.Console.WriteLine("  Start Round  ");
+            System.Console.WriteLine("  Shop  ");
+            System.Console.WriteLine("  Help  ");
+            System.Console.WriteLine("  Quit  ");
 
             int selectedOption = 0;
 
             while(true)
             {
-                Console.CursorTop = 4 + selectedOption;
+                Console.CursorTop = 1 + selectedOption;
                 Console.CursorLeft = 0;
                 Console.Write(">");
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
                 if (keyInfo.Key == ConsoleKey.DownArrow)
                 {
-                    Console.CursorTop = 4 + selectedOption;
+                    Console.CursorTop = 1 + selectedOption;
                     Console.CursorLeft = 0;
                     Console.Write(" ");
                     selectedOption++;
                 }
                 else if (keyInfo.Key == ConsoleKey.UpArrow)
                 {
-                    Console.CursorTop = 4 + selectedOption;
+                    Console.CursorTop = 1 + selectedOption;
                     Console.CursorLeft = 0;
                     Console.Write(" ");
                     selectedOption--;
@@ -43,6 +43,8 @@ namespace Prog2
                     if (selectedOption == 0)
                     {                    
                         state = GameState.menu;
+                        System.Console.WriteLine("oop");
+                        System.Console.ReadLine();
                         break;
                     }
                     else if (selectedOption == 1)
@@ -54,9 +56,9 @@ namespace Prog2
 
                 if (selectedOption < 0)
                 {
-                    selectedOption = 1;
+                    selectedOption = 3;
                 }
-                else if (selectedOption > 1)
+                else if (selectedOption > 3)
                 {
                     selectedOption = 0;
                 }  

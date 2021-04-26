@@ -8,8 +8,7 @@ namespace Prog2
         {
             //alla gamestates som spelet kommer behöva. Dessa kommer vi kunna byta mellan via exempelvis en switch-case
             menu,
-            inGameRound,
-            inGamePause,
+            inGame,
             help,
             shop,
             gameLost,
@@ -21,8 +20,6 @@ namespace Prog2
         public GameState state = GameState.menu;
         public virtual GameState VisualiseMenu()
         {
-            // kod
-
             Console.Clear();
             System.Console.WriteLine("Hello and welcome to EFG, Epic Fighting Game!\n");
             System.Console.WriteLine("This is a tower defense game where you purchase heroes to defeat the hoard of monsters awaiting\n");
@@ -60,7 +57,7 @@ namespace Prog2
 
                     if (selectedOption == 0)
                     {                    
-                        state = GameState.inGamePause;
+                        state = GameState.inGame;
                         break;
                     }
                     else if (selectedOption == 1)
@@ -74,12 +71,6 @@ namespace Prog2
                         break;
                     }
                 }
-                // else if(keyInfo.Key != ConsoleKey.UpArrow || keyInfo.Key != ConsoleKey.DownArrow || keyInfo.Key != ConsoleKey.Enter)
-                // {
-                //     Console.CursorTop = 5 + selectedOption;
-                //     Console.CursorLeft = 0;
-                //     Console.Write(" ");
-                // }
 
                 if (selectedOption < 0)
                 {
