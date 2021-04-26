@@ -14,17 +14,12 @@ namespace Prog2
             shop,
             gameLost,
             gameWon,
-            quit
+            quit,
+            superQuit
         }
 
         public GameState state = GameState.menu;
-
-        public Menu()
-        {
-
-        }
-
-        public virtual GameState Do()
+        public virtual GameState VisualiseMenu()
         {
             // kod
 
@@ -60,22 +55,22 @@ namespace Prog2
                     Console.Write(" ");
                     selectedOption--;
                 }
-                if (keyInfo.Key == ConsoleKey.Enter)
+                else if (keyInfo.Key == ConsoleKey.Enter)
                 {
 
                     if (selectedOption == 0)
                     {                    
-                        localState = GameState.inGamePause;
+                        state = GameState.inGamePause;
                         break;
                     }
                     else if (selectedOption == 1)
                     {
-                        localState = GameState.help;
+                        state = GameState.help;
                         break;
                     }
                     else if (selectedOption == 2)
                     {
-                        localState = GameState.quit;
+                        state = GameState.quit;
                         break;
                     }
                 }
@@ -93,11 +88,10 @@ namespace Prog2
                 else if (selectedOption > 2)
                 {
                     selectedOption = 0;
-                }
-
-                
+                }  
             }
-            return localState;
+            return state;
+
         }
         
     }
