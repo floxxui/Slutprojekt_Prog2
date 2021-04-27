@@ -40,9 +40,17 @@ namespace Prog2
                 {
 
                     if (selectedOption == 0)
-                    {                    
-                        state = GameState.menu;
-                        break;
+                    {
+                        if (previousMenu == GameState.menu)
+                        {
+                            state = GameState.menu;
+                            break;
+                        }
+                        else if (previousMenu == GameState.inGame)
+                        {
+                            state = GameState.inGame;
+                            break;
+                        }                        
                     }
                     else if (selectedOption == 1)
                     {

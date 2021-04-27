@@ -42,14 +42,25 @@ namespace Prog2
 
                     if (selectedOption == 0)
                     {                    
-                        state = GameState.menu;
                         System.Console.WriteLine("oop");
                         System.Console.ReadLine();
                         break;
                     }
                     else if (selectedOption == 1)
                     {
-                        state = GameState.superQuit;
+                        state = GameState.shop;
+                        break;
+                    }
+                    else if (selectedOption == 2)
+                    {
+                        previousMenu = GameState.inGame;
+                        state = GameState.help;
+                        break;
+                    }
+                    else if (selectedOption == 3)
+                    {
+                        previousMenu = GameState.inGame;
+                        state = GameState.quit;
                         break;
                     }
                 }

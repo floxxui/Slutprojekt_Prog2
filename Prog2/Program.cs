@@ -15,14 +15,14 @@ namespace Prog2
             menus.Add(Menu.GameState.quit, new Quit());
             menus.Add(Menu.GameState.inGame, new Game());
             menus.Add(Menu.GameState.shop, new Shop());
+            //menus.Add(Menu.GameState.gameLost, new Lost());
+            //menus.Add(Menu.GameState.gameWon, new Won());
 
             Menu.GameState currentMenu = Menu.GameState.menu;
 
             while (currentMenu != Menu.GameState.superQuit)
             {
                 currentMenu = menus[currentMenu].VisualiseMenu();
-                // case GameState.gameLost
-                // case GameState.gameWon
             }
         }
     }

@@ -16,7 +16,8 @@ namespace Prog2
             quit,
             superQuit
         }
-
+        protected static GameState previousMenu = GameState.menu;
+        //Static gör det möjligt att spara värdet i vilken subklass som hellst och sedan komma åt världet vart som hellst utan att returna det. Detta är användbart eftersom state måste returnas.
         public GameState state = GameState.menu;
         public virtual GameState VisualiseMenu()
         {
@@ -63,11 +64,13 @@ namespace Prog2
                     else if (selectedOption == 1)
                     {
                         state = GameState.help;
+                        previousMenu = GameState.menu;
                         break;
                     }
                     else if (selectedOption == 2)
                     {
                         state = GameState.quit;
+                        previousMenu = GameState.menu;
                         break;
                     }
                 }

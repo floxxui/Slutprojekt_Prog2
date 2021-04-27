@@ -13,7 +13,7 @@ namespace Prog2
             System.Console.WriteLine("  About towers  ");
             System.Console.WriteLine("  About monsters  ");
             System.Console.WriteLine("  About rounds  ");
-            System.Console.WriteLine("  Return to menu  ");
+            System.Console.WriteLine("  Return  ");
 
             int selectedOption = 0;
 
@@ -64,8 +64,16 @@ namespace Prog2
                     }
                     else if (selectedOption == 4)
                     {
-                        state = GameState.menu;
-                        break;
+                        if (previousMenu == GameState.menu)
+                        {
+                            state = GameState.menu;
+                            break;
+                        }
+                        else if (previousMenu == GameState.inGame)
+                        {
+                            state = GameState.inGame;
+                            break;
+                        }   
                     }
                 }
 
