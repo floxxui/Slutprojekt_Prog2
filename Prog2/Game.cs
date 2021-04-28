@@ -41,9 +41,8 @@ namespace Prog2
                 {
 
                     if (selectedOption == 0)
-                    {                    
-                        System.Console.WriteLine("oop");
-                        System.Console.ReadLine();
+                    {    
+                        PlayRound();
                         break;
                     }
                     else if (selectedOption == 1)
@@ -76,6 +75,11 @@ namespace Prog2
             }
 
             return state;
+        }
+
+        private void PlayRound()
+        {
+            
         }
 
     }
