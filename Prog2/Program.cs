@@ -8,8 +8,10 @@ namespace Prog2
         static void Main(string[] args)
         {
             //Info i anteckningsblock
-            Dictionary<Menu.GameState, Menu> menus = new Dictionary<Menu.GameState, Menu>();
+            //Round r = new Round();
 
+            Dictionary<Menu.GameState, Menu> menus = new Dictionary<Menu.GameState, Menu>();
+            
             menus.Add(Menu.GameState.menu, new Menu());
             menus.Add(Menu.GameState.help, new Help());
             menus.Add(Menu.GameState.quit, new Quit());
@@ -25,5 +27,12 @@ namespace Prog2
                 currentMenu = menus[currentMenu].VisualiseMenu();
             }
         }
+
+        //current bugs:
+
+        //need to fix:
+        //whole shop
+        
+        
     }
 }

@@ -6,20 +6,19 @@ namespace Prog2
     {
         public override GameState VisualiseMenu()
         {
-            Console.Clear();
-            System.Console.WriteLine("What do you need help with?\n");
-
-            System.Console.WriteLine("  How to play  ");
-            System.Console.WriteLine("  About towers  ");
-            System.Console.WriteLine("  About monsters  ");
-            System.Console.WriteLine("  About rounds  ");
-            System.Console.WriteLine("  Return  ");
-
             int selectedOption = 0;
 
             while(true)
             {
+                Console.Clear();
+                System.Console.WriteLine("What do you need help with?\n");
 
+                System.Console.WriteLine("  How to play  ");
+                System.Console.WriteLine("  About towers  ");
+                System.Console.WriteLine("  About monsters  ");
+                System.Console.WriteLine("  About rounds  ");
+                System.Console.WriteLine("  Return  ");
+                
                 Console.CursorTop = 2 + selectedOption;
                 Console.CursorLeft = 0;
                 Console.Write(">");
@@ -45,22 +44,18 @@ namespace Prog2
                     if (selectedOption == 0)
                     {                    
                         HowToPlay();
-                        break;
                     }
                     else if (selectedOption == 1)
                     {
                         AboutTowers();
-                        break;
                     }
                     else if (selectedOption == 2)
                     {
                         AboutMonsters();
-                        break;
                     }
                     else if (selectedOption == 3)
                     {
                         AboutRounds();
-                        break;
                     }
                     else if (selectedOption == 4)
                     {

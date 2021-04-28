@@ -4,20 +4,21 @@ namespace Prog2
 {
     public class Game: Menu
     {
+        public static int roundCount = 1;
         public override GameState VisualiseMenu()
         {
-            Console.Clear();
-            System.Console.WriteLine();
-
-            System.Console.WriteLine("  Start Round  ");
-            System.Console.WriteLine("  Shop  ");
-            System.Console.WriteLine("  Help  ");
-            System.Console.WriteLine("  Quit  ");
-
             int selectedOption = 0;
 
             while(true)
             {
+                Console.Clear();
+                System.Console.WriteLine();
+
+                System.Console.WriteLine("  Start Round  ");
+                System.Console.WriteLine("  Shop  ");
+                System.Console.WriteLine("  Help  ");
+                System.Console.WriteLine("  Quit  ");
+
                 Console.CursorTop = 1 + selectedOption;
                 Console.CursorLeft = 0;
                 Console.Write(">");
@@ -42,13 +43,12 @@ namespace Prog2
 
                     if (selectedOption == 0)
                     {    
+                        Console.Clear();
                         PlayRound();
-                        break;
                     }
                     else if (selectedOption == 1)
                     {
                         state = GameState.shop;
-                        break;
                     }
                     else if (selectedOption == 2)
                     {
@@ -79,7 +79,44 @@ namespace Prog2
 
         private void PlayRound()
         {
-            
+            Round r = new Round();
+            //Round.SelectRound();
+
+            switch (Game.roundCount)
+            {
+                case 1:
+                System.Console.WriteLine("yees");
+                Console.ReadLine();
+                    Round.Round1();
+                    break;
+                case 2:
+                    Round.Round2();
+                    break;
+                case 3:
+                    Round.Round3();
+                    break;
+                case 4:
+                    Round.Round4();
+                    break;
+                case 5:
+                    Round.Round5();
+                    break;
+                case 6:
+                    Round.Round6();
+                    break;
+                case 7:
+                    Round.Round7();
+                    break;
+                case 8:
+                    Round.Round8();
+                    break;
+                case 9:
+                    Round.Round9();
+                    break;
+                case 10:
+                    Round.Round10();
+                    break;
+            }
         }
 
     }
