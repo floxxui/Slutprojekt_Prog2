@@ -1,5 +1,6 @@
 using System.Text;
 using System;
+using System.Collections.Generic;
 
 namespace Prog2
 {
@@ -14,6 +15,7 @@ namespace Prog2
         protected bool upgrade = false;
         protected string upgradeInfo = "";
         protected Random generator = new Random();
+        public static List<Hero> Heroes{ get; set; } = new List<Hero>(); 
 
         public void PrintStats()
         {

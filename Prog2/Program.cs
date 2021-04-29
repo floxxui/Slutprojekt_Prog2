@@ -7,9 +7,7 @@ namespace Prog2
     {
         static void Main(string[] args)
         {
-            //Info i anteckningsblock
-            //Round r = new Round();
-
+            
             Dictionary<Menu.GameState, Menu> menus = new Dictionary<Menu.GameState, Menu>();
             
             menus.Add(Menu.GameState.menu, new Menu());

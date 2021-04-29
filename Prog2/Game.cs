@@ -4,7 +4,15 @@ namespace Prog2
 {
     public class Game: Menu
     {
-        public static int roundCount = 1;
+        // public static int roundCount = 1;
+
+        public static int RoundCount{get; set;} = 1;
+
+        // public static int RoundCount
+        // {
+        //     get{ return roundCount; }
+        //     set{ roundCount = value; }
+        // }
         public override GameState VisualiseMenu()
         {
             int selectedOption = 0;
@@ -40,8 +48,13 @@ namespace Prog2
                 }
                 else if (keyInfo.Key == ConsoleKey.Enter)
                 {
-
-                    if (selectedOption == 0)
+                    if (selectedOption == 0 && Hero.Heroes.Count == 0)
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("You need to purchase at least 1 hero before starting the game");
+                        Console.ReadLine();
+                    }
+                    else if (selectedOption == 0 && Hero.Heroes.Count >= 1)
                     {    
                         Console.Clear();
                         PlayRound();
@@ -82,41 +95,53 @@ namespace Prog2
             Round r = new Round();
             //Round.SelectRound();
 
-            switch (Game.roundCount)
+            switch (RoundCount)
             {
                 case 1:
-                System.Console.WriteLine("yees");
-                Console.ReadLine();
-                    Round.Round1();
+                    System.Console.WriteLine("yees");
+                    Console.ReadLine();
+
+                    Round.Round1GetMonster();
+                    
+                    System.Console.WriteLine(Round.Rounds.Count);
+                    System.Console.WriteLine(Round.MonstersInRound.Count);
+                    Console.ReadLine();
+
+                    Round1Play();
                     break;
                 case 2:
-                    Round.Round2();
+                    Round.Round2GetMonster();
                     break;
                 case 3:
-                    Round.Round3();
+                    Round.Round3GetMonster();
                     break;
                 case 4:
-                    Round.Round4();
+                    Round.Round4GetMonster();
                     break;
                 case 5:
-                    Round.Round5();
+                    Round.Round5GetMonster();
                     break;
                 case 6:
-                    Round.Round6();
+                    Round.Round6GetMonster();
                     break;
                 case 7:
-                    Round.Round7();
+                    Round.Round7GetMonster();
                     break;
                 case 8:
-                    Round.Round8();
+                    Round.Round8GetMonster();
                     break;
                 case 9:
-                    Round.Round9();
+                    Round.Round9GetMonster();
                     break;
                 case 10:
-                    Round.Round10();
+                    Round.Round10GetMonster();
                     break;
             }
+        }
+
+        private void Round1Play()
+        {
+
         }
 
     }

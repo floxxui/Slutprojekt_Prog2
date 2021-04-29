@@ -18,7 +18,7 @@ namespace Prog2
         }
         protected static GameState previousMenu = GameState.menu;
         //Static gör det möjligt att spara värdet i vilken subklass som hellst och sedan komma åt världet vart som hellst utan att returna det. Detta är användbart eftersom state måste returnas.
-        public GameState state = GameState.menu;
+        protected GameState state = GameState.menu;
         public virtual GameState VisualiseMenu()
         {
             Console.Clear();

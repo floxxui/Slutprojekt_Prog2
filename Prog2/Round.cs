@@ -5,83 +5,39 @@ namespace Prog2
 {
     public class Round
     {
-        private static Queue<int> rounds = new Queue<int>();
-        private static List<Monster> monstersInRound = new List<Monster>();
+
+
+        public static Queue<int> Rounds{ get; set; } = new Queue<int>();
+        public static List<Monster> MonstersInRound { get; set;} = new List<Monster>();
         //private int time = 60;
 
         public Round()
         {
-            rounds.Enqueue(1);
-            rounds.Enqueue(2);
-            rounds.Enqueue(3);
-            rounds.Enqueue(4);
-            rounds.Enqueue(5);
-            rounds.Enqueue(6);
-            rounds.Enqueue(7);
-            rounds.Enqueue(8);
-            rounds.Enqueue(9);
-            rounds.Enqueue(10);
+            Rounds.Enqueue(1);
+            Rounds.Enqueue(2);
+            Rounds.Enqueue(3);
+            Rounds.Enqueue(4);
+            Rounds.Enqueue(5);
+            Rounds.Enqueue(6);
+            Rounds.Enqueue(7);
+            Rounds.Enqueue(8);
+            Rounds.Enqueue(9);
+            Rounds.Enqueue(10);
         }
 
-        // public static void SelectRound()
-        // {
-        //     System.Console.WriteLine(rounds.Count);
-        //     System.Console.WriteLine(monstersInRound.Count);
-        //     Console.ReadLine();
-
-        //     switch (Game.roundCount)
-        //     {
-        //         case 1:
-        //         System.Console.WriteLine("yees");
-        //         Console.ReadLine();
-        //             Round1();
-        //             break;
-        //         case 2:
-        //             Round2();
-        //             break;
-        //         case 3:
-        //             Round3();
-        //             break;
-        //         case 4:
-        //             Round4();
-        //             break;
-        //         case 5:
-        //             Round5();
-        //             break;
-        //         case 6:
-        //             Round6();
-        //             break;
-        //         case 7:
-        //             Round7();
-        //             break;
-        //         case 8:
-        //             Round8();
-        //             break;
-        //         case 9:
-        //             Round9();
-        //             break;
-        //         case 10:
-        //             Round10();
-        //             break;
-        //     }
-        // }
-
-        public static void Round1()
+        public static void Round1GetMonster()
         {
             for (int zombies = 0; zombies < 10; zombies++)
             {
-                monstersInRound.Add(new Zombie());
+                MonstersInRound.Add(new Zombie());
             }
-            System.Console.WriteLine(rounds.Count);
-            System.Console.WriteLine(monstersInRound.Count);
-            Console.ReadLine();
         }
 
-        public static void Round2()
+        public static void Round2GetMonster()
         {
             for (int zombies = 0; zombies < 10; zombies++)
             {
-                monstersInRound.Add(new Zombie());
+                MonstersInRound.Add(new Zombie());
             }
             for (int bats = 0; bats < 5; bats++)
             {
@@ -89,7 +45,7 @@ namespace Prog2
             }
         }
 
-        public static void Round3()
+        public static void Round3GetMonster()
         {
             for (int zombies = 0; zombies < 15; zombies++)
             {
@@ -101,7 +57,7 @@ namespace Prog2
             }
         }
 
-        public static void Round4()
+        public static void Round4GetMonster()
         {
             for (int zombies = 0; zombies < 30; zombies++)
             {
@@ -113,7 +69,7 @@ namespace Prog2
             }
         }
 
-        public static void Round5()
+        public static void Round5GetMonster()
         {
             for (int zombies = 0; zombies < 20; zombies++)
             {
@@ -129,7 +85,7 @@ namespace Prog2
             }
         }
 
-        public static void Round6()
+        public static void Round6GetMonster()
         {
             for (int bats = 0; bats < 10; bats++)
             {
@@ -145,7 +101,7 @@ namespace Prog2
             }
         }
 
-        public static void Round7()
+        public static void Round7GetMonster()
         {
             for (int skeletons = 0; skeletons < 10; skeletons++)
             {
@@ -158,7 +114,7 @@ namespace Prog2
             //monstersInRound.Add(new Witch());
         }
 
-        public static void Round8()
+        public static void Round8GetMonster()
         {
             for (int skeletons = 0; skeletons < 10; skeletons++)
             {
@@ -174,7 +130,7 @@ namespace Prog2
             }
         }
 
-        public static void Round9()
+        public static void Round9GetMonster()
         {
             for (int witches = 0; witches < 10; witches++)
             {
@@ -182,7 +138,7 @@ namespace Prog2
             }
         }
 
-        public static void Round10()
+        public static void Round10GetMonster()
         {
             //monstersInRound.Add(new Dragon());
         }
