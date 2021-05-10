@@ -5,8 +5,10 @@ namespace Prog2
     public class Help: Menu
     {
         public override GameState VisualiseMenu()
+        //Overriden checkar i huvudklassen om det finns en metod med samma namn. I så fall kommer denna metod spelas istället ifall denna subklass försöker nås
         {
             int selectedOption = 0;
+            //håller koll på vilket alternativ som för tillfället är markerat
 
             while(true)
             {
@@ -18,10 +20,12 @@ namespace Prog2
                 System.Console.WriteLine("  About monsters  ");
                 System.Console.WriteLine("  About rounds  ");
                 System.Console.WriteLine("  Return  ");
+                //Visar alternativ man kan genomföra
                 
                 Console.CursorTop = 2 + selectedOption;
                 Console.CursorLeft = 0;
                 Console.Write(">");
+                //Skriver ut en pil på markerat alternativ
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
                 if (keyInfo.Key == ConsoleKey.DownArrow)
@@ -30,6 +34,7 @@ namespace Prog2
                     Console.CursorLeft = 0;
                     Console.Write(" ");
                     selectedOption++;
+                    //Byter ut > med ett mellanslag på tidigare position i listan bland alternativen innan det läggs till 1 i instansen selectedOption så pilen kan ritas ut vid det nya alternativet
                 }
                 else if (keyInfo.Key == ConsoleKey.UpArrow)
                 {
@@ -37,6 +42,7 @@ namespace Prog2
                     Console.CursorLeft = 0;
                     Console.Write(" ");
                     selectedOption--;
+                    //Byter ut > med ett mellanslag på tidigare position i listan bland alternativen innan det tas bort 1 i instansen selectedOption så pilen kan ritas ut vid det nya alternativet
                 }
                 else if (keyInfo.Key == ConsoleKey.Enter)
                 {
@@ -44,18 +50,22 @@ namespace Prog2
                     if (selectedOption == 0)
                     {                    
                         HowToPlay();
+                        //Spelar metoden HowToPlay() om alternativet blivit valt
                     }
                     else if (selectedOption == 1)
                     {
                         AboutTowers();
+                        //Spelar metoden om alternativet blivit valt
                     }
                     else if (selectedOption == 2)
                     {
                         AboutMonsters();
+                        //Spelar metoden om alternativet blivit valt
                     }
                     else if (selectedOption == 3)
                     {
                         AboutRounds();
+                        //Spelar metoden  om alternativet blivit valt
                     }
                     else if (selectedOption == 4)
                     {
@@ -63,11 +73,13 @@ namespace Prog2
                         {
                             state = GameState.menu;
                             break;
+                            //Om man valde help från menu så byts gamestate tillbaka till menu
                         }
                         else if (previousMenu == GameState.inGame)
                         {
                             state = GameState.inGame;
                             break;
+                            //Om man valde help från inGame så byts gamestate tillbaka till inGame
                         }   
                     }
                 }
@@ -80,9 +92,11 @@ namespace Prog2
                 {
                     selectedOption = 0;
                 }
+                //Ser till att man inte kan komma utanför listan av alternativ. Om man försöker gå utanför nedåt så hamnar man längst upp i listan och tvärtom
             }
 
             return state;
+            //Returnar state så att programmet vet vilket gamestate som ska spelas
         }
 
         private void HowToPlay()
@@ -96,6 +110,7 @@ namespace Prog2
             System.Console.WriteLine("When you start a round, the towers will have 60 seconds on avarage to defeat a monster.\n Some will have to be defeated in a shorter time.");
             System.Console.WriteLine("You have 50 lives every single game. If you loose all these lives, you loose.\n If you finish 10 rounds without loosing all your lives, you win.");
             Console.ReadLine();
+            //Bara massa text som förklarar hur man spelar spelet
         }
         private void AboutTowers()
         {
@@ -105,6 +120,7 @@ namespace Prog2
             System.Console.WriteLine("2. Speed Hero\n This hero attacks twice as fast, and deal an extra two damage after upgrade.\n");
             System.Console.WriteLine("3. Effect Hero\n This hero leaves an effect on the monster which deals 1 damage for every 10 steps. After it's upgraded, stepcount is reduced from 10 to 5.");
             Console.ReadLine();
+            //Bara massa text som beskriver alla hero's som finns
 
         }
         private void AboutMonsters()
@@ -112,15 +128,14 @@ namespace Prog2
             Console.Clear();
             System.Console.WriteLine("monsterTest");
             Console.ReadLine();
+            //debugging grej
         }
         private void AboutRounds()
         {
             Console.Clear();
             System.Console.WriteLine("RoundTest");
             Console.ReadLine();
+            //debugging grej
         }
-
-
-
     }
 }

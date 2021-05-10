@@ -7,8 +7,10 @@ namespace Prog2
         public AttackHero()
         {
             damage = 2;
-            effectPrint = "Nothing";
+            effect = false;
             upgradeInfo = "Does 2 extra damage on monsters";
+            price = 20;
+            //Byter värden på instanser som klassen ärver från Hero klassen
         }
 
 
@@ -18,6 +20,8 @@ namespace Prog2
             {
                 damage =+ 2;
             }
+            //Ökar damage med 2 om hjälten har blivit uppgraderad
         }
+
     }
 }
