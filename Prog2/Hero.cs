@@ -12,7 +12,7 @@ namespace Prog2
         //hur mycket damage en hero gör
         protected int accuracy = 100;
         //hur hög accuracy en hero har
-        protected int speed = 1;
+        protected int speed = 10;
         //vilken hastighet en hero attackerar med
         protected bool effect = false;
         //om en hero kan genomföra en effekt på ett monster
@@ -25,6 +25,12 @@ namespace Prog2
         public static List<Hero> Heroes{ get; set; } = new List<Hero>(); 
         //en lista med alla spelarens heroes. När en spelare köper en hero i shop klassen kommer en ny hero att läggas till i listan
 
+        public virtual int GetAttack()
+        {
+            int cooldown = 60 / speed;
+            damage = damage * cooldown;
+            return damage;
+        }
         public virtual void Upgraded()
         {
             

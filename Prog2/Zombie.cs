@@ -6,7 +6,7 @@ namespace Prog2
     {
         public Zombie()
         {
-            monsterHp = 1;
+            hp = 1;
             speed = 1;
             priority = 10;
             //Ändrar Monsters variabler på hp, speed och priority

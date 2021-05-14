@@ -36,8 +36,6 @@ namespace Prog2
         //current bugs:
 
         //need to fix:
-        //whole shop
-        //make it possible to purchase heroes
         //Make it possible to play the game
         
         

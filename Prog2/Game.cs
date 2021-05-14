@@ -7,9 +7,10 @@ namespace Prog2
     {
 
         // public static int RoundCount{get; set;} = 1;
-        // //håller koll på vilken runda som ska spelas. Skulle gå att ta bort genom att byta ut dess position med queue'n, men har inte hunnit fixa
-        // //temporär lösning
-
+        private static bool roundsCreated = false;
+        private Queue<int> Rounds = new Queue<int>();
+        private static int playerHP = 50;
+        private Round r = new Round();
         public override GameState VisualiseMenu()
         //Overriden checkar i huvudklassen om det finns en metod med samma namn. I så fall kommer denna metod spelas istället ifall denna subklass försöker nås
         {
@@ -61,7 +62,7 @@ namespace Prog2
                     else if (selectedOption == 0 && Hero.Heroes.Count >= 1)
                     {    
                         Console.Clear();
-                        PlayRound();
+                        Rounds = RoundController();
                         //Om spelaren försöker starta spelet och har ett torn utplacerat så spelas mästa rundan
                     }
                     else if (selectedOption == 1)
@@ -104,69 +105,59 @@ namespace Prog2
             //previousMenu behöver inte bli returnat eftersom det är en static, värdet i index sparas över alla subklasser och huvudklassen
         }
 
-        private void PlayRound()
+        private Queue<int> RoundController()
         {
-            Round r = new Round();
-            Queue<int> Rounds = new Queue<int>();
-
-            Rounds  = r.GetRound();
-
+            if (roundsCreated == false)
+            {
+                
+                Rounds  = r.GetRound();
+                roundsCreated = true;
+            }
+            
             switch (Rounds.Peek())
             {
                 case 1:
-                    //Round.Round1GetMonster();
                     Round.GetMonster(0);
                     //Hämtar monster från metoden i Round klassen. I metoden läggs monster i en lista
-                    
+                    playerHP = r.PlayRound(Hero.Heroes);
 
-                    System.Console.WriteLine(Round.Rounds.Count);
+                    System.Console.WriteLine(Rounds.Count);
                     System.Console.WriteLine(Round.MonstersInRound.Count);
                     Console.ReadLine();
                     //Debug
-
-                    //Round1Play();
                     
                     break;
                 case 2:
-                    //Round.Round2GetMonster();
                     Round.GetMonster(1);
-                    //Hämtar monster från metoden i Round klassen. I metoden läggs monster i en lista
+                    //Denna metod i varje case hos switch casen gör samma sak
                     break;
                 case 3:
-                    //Round.Round3GetMonster();
                     Round.GetMonster(2);
-                    //Denna (och alla andra metoder med liknande namn i switch casen) gör samma sak som den gör för runda 1 och 2
                     break;
                 case 4:
                     Round.GetMonster(3);
-                    //Round.Round4GetMonster();
                     break;
                 case 5:
                     Round.GetMonster(4);
-                    //Round.Round5GetMonster();
                     break;
                 case 6:
-                    //Round.Round6GetMonster();
                     Round.GetMonster(5);
                     break;
                 case 7:
-                    //Round.Round7GetMonster();
                     Round.GetMonster(6);
                     break;
                 case 8:
-                    //Round.Round8GetMonster();
                     Round.GetMonster(7);
                     break;
                 case 9:
-                   // Round.Round9GetMonster();
                    Round.GetMonster(8);
                     break;
                 case 10:
-                    //Round.Round10GetMonster();
                     Round.GetMonster(9);
                     break;
                 //Switch case som checkar vilken runda det är som ska spelas. 
             }
+            return Rounds;
         }
     }
 }

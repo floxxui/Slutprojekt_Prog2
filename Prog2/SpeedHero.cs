@@ -6,7 +6,7 @@ namespace Prog2
     {
         public SpeedHero()
         {
-            speed = 2;
+            speed = 5;
             effectPrint = "Nothing";
             upgradeInfo = "Does 2 extra damage on monsters";
             //Byter värden på instanser som klassen ärver från Hero klassen
