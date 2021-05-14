@@ -10,6 +10,12 @@ namespace Prog2
         {
             
         }
+
+        public override void Upgraded()
+        {
+
+        }
+
         //Ingen kod har lagts in i projektet ennu
         //Random ska randoma ut en siffra mellan 1 och 2
         //Om resultatet blir 1 gör den hälften så mycket damage som Hero

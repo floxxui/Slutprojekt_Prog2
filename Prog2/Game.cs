@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace Prog2
 {
     public class Game: Menu
     {
 
-        public static int RoundCount{get; set;} = 1;
-        //håller koll på vilken runda som ska spelas. Skulle gå att ta bort genom att byta ut dess position med queue'n, men har inte hunnit fixa
-        //temporär lösning
+        // public static int RoundCount{get; set;} = 1;
+        // //håller koll på vilken runda som ska spelas. Skulle gå att ta bort genom att byta ut dess position med queue'n, men har inte hunnit fixa
+        // //temporär lösning
 
         public override GameState VisualiseMenu()
         //Overriden checkar i huvudklassen om det finns en metod med samma namn. I så fall kommer denna metod spelas istället ifall denna subklass försöker nås
@@ -106,62 +107,66 @@ namespace Prog2
         private void PlayRound()
         {
             Round r = new Round();
+            Queue<int> Rounds = new Queue<int>();
 
-            switch (RoundCount)
+            Rounds  = r.GetRound();
+
+            switch (Rounds.Peek())
             {
                 case 1:
-                    System.Console.WriteLine("yees");
-                    Console.ReadLine();
-
-                    Round.Round1GetMonster();
+                    //Round.Round1GetMonster();
+                    Round.GetMonster(0);
                     //Hämtar monster från metoden i Round klassen. I metoden läggs monster i en lista
                     
+
                     System.Console.WriteLine(Round.Rounds.Count);
                     System.Console.WriteLine(Round.MonstersInRound.Count);
                     Console.ReadLine();
                     //Debug
 
                     //Round1Play();
+                    
                     break;
                 case 2:
-                    Round.Round2GetMonster();
+                    //Round.Round2GetMonster();
+                    Round.GetMonster(1);
                     //Hämtar monster från metoden i Round klassen. I metoden läggs monster i en lista
                     break;
                 case 3:
-                    Round.Round3GetMonster();
+                    //Round.Round3GetMonster();
+                    Round.GetMonster(2);
                     //Denna (och alla andra metoder med liknande namn i switch casen) gör samma sak som den gör för runda 1 och 2
                     break;
                 case 4:
-                    Round.Round4GetMonster();
+                    Round.GetMonster(3);
+                    //Round.Round4GetMonster();
                     break;
                 case 5:
-                    Round.Round5GetMonster();
+                    Round.GetMonster(4);
+                    //Round.Round5GetMonster();
                     break;
                 case 6:
-                    Round.Round6GetMonster();
+                    //Round.Round6GetMonster();
+                    Round.GetMonster(5);
                     break;
                 case 7:
-                    Round.Round7GetMonster();
+                    //Round.Round7GetMonster();
+                    Round.GetMonster(6);
                     break;
                 case 8:
-                    Round.Round8GetMonster();
+                    //Round.Round8GetMonster();
+                    Round.GetMonster(7);
                     break;
                 case 9:
-                    Round.Round9GetMonster();
+                   // Round.Round9GetMonster();
+                   Round.GetMonster(8);
                     break;
                 case 10:
-                    Round.Round10GetMonster();
+                    //Round.Round10GetMonster();
+                    Round.GetMonster(9);
                     break;
-
-
                 //Switch case som checkar vilken runda det är som ska spelas. 
             }
         }
-
-        // private void Round1Play()
-        // {
-
-        // }
-
     }
 }

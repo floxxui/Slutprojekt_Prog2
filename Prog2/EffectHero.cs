@@ -12,7 +12,7 @@ namespace Prog2
             //Byter värden från instanser som klassen ärver från Hero klassen
         }
 
-        public void Upgraded()
+        public override void Upgraded()
         {
             if (upgrade == true)
             {

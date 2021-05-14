@@ -6,7 +6,7 @@ namespace Prog2
 {
     public class Hero
     {
-        protected int price;
+        public static int Price{ get; set; }
         //hur mycket en hero kostar
         protected int damage = 1;
         //hur mycket damage en hero gör
@@ -24,6 +24,11 @@ namespace Prog2
         //skriver ut vad uppgraderingen gör
         public static List<Hero> Heroes{ get; set; } = new List<Hero>(); 
         //en lista med alla spelarens heroes. När en spelare köper en hero i shop klassen kommer en ny hero att läggas till i listan
+
+        public virtual void Upgraded()
+        {
+            
+        }
 
         // public void PrintStats()
         // {

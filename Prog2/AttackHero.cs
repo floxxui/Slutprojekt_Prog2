@@ -9,12 +9,12 @@ namespace Prog2
             damage = 2;
             effect = false;
             upgradeInfo = "Does 2 extra damage on monsters";
-            price = 20;
+            Price = 40;
             //Byter värden på instanser som klassen ärver från Hero klassen
         }
 
 
-        public void Upgraded()
+        public override void Upgraded()
         {
             if (upgrade == true)
             {
