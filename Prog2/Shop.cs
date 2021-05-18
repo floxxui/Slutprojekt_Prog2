@@ -180,9 +180,9 @@ namespace Prog2
 
                 if (selectedOption < 0)
                 {
-                    selectedOption = 2;
+                    selectedOption = 1;
                 }
-                else if (selectedOption > 2)
+                else if (selectedOption > 1)
                 {
                     selectedOption = 0;
                 }

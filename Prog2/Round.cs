@@ -66,9 +66,9 @@ namespace Prog2
 
             MonsterMkr[] monsterMakers = {
                 () => { return new Zombie();},
-                () => { return new Monster();},
-                () => { return new Monster();},
-                () => { return new Monster();},
+                () => { return new Bat();},
+                () => { return new Skeleton();},
+                () => { return new Spider();},
                 () => { return new Monster();},
                 () => { return new Monster();}
             };
@@ -98,12 +98,30 @@ namespace Prog2
         public int PlayRound(List<Hero> purchasedHeroes)
         {
             
-            int totalDamage = 0;
+            int totalAttackDamage = 0;
+            int totalMonsterHealth = 0;
+
             foreach (Hero hero in purchasedHeroes)
             {
-                totalDamage += hero.GetAttack();
+                totalAttackDamage += hero.GetAttackDamage();
             }
-            return totalDamage;
+            foreach (Monster monster in MonstersInRound)
+            {
+                totalMonsterHealth += monster.GetHp();
+            }
+
+            int playerDamageTaken = totalMonsterHealth - totalAttackDamage;
+            if (playerDamageTaken <= 0)
+            {
+                playerDamageTaken = 0;
+            }
+
+            System.Console.WriteLine("Attack: " + totalAttackDamage);
+            System.Console.WriteLine(" monsterhp: " + totalMonsterHealth);
+
+            MonstersInRound.Clear();
+
+            return playerDamageTaken;
         }
     }
 }

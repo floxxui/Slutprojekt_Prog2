@@ -16,7 +16,7 @@ namespace Prog2
             menus.Add(Menu.GameState.quit, new Quit());
             menus.Add(Menu.GameState.inGame, new Game());
             menus.Add(Menu.GameState.shop, new Shop());
-            //menus.Add(Menu.GameState.gameLost, new Lost());
+            menus.Add(Menu.GameState.gameLost, new Lose());
             //menus.Add(Menu.GameState.gameWon, new Won());
             
             //Lägger till gamestates och klasser från Menu klasshirearkin i dictionaryn
@@ -37,6 +37,7 @@ namespace Prog2
 
         //need to fix:
         //Make it possible to play the game
+        //Fix monster speed, and priority?
         
         
     }

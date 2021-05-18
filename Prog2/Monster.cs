@@ -6,9 +6,14 @@ namespace Prog2
     {
         protected int hp;
         //Ger monstret visst hp
-        protected int speed;
+        // protected int speed;
         //Ger monster en viss speed. 1 motsvarar 50 steg
-        protected int priority;
+        // protected int priority;
         //visar vilken prioritet monstret har. Detta bestämmer vilket monster som kommer attackeras först
+
+        public int GetHp()
+        {
+            return hp;
+        }
     }
 }

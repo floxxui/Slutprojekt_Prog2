@@ -98,6 +98,12 @@ namespace Prog2
                     selectedOption = 0;
                 }  
                 //Ser till att man inte kan komma utanför listan av alternativ. Om man försöker gå utanför nedåt så hamnar man längst upp i listan och tvärtom
+
+                if (playerHP <= 0)
+                {
+                    state = GameState.gameLost;
+                    break;
+                }
             }
 
             return state;
@@ -119,41 +125,114 @@ namespace Prog2
                 case 1:
                     Round.GetMonster(0);
                     //Hämtar monster från metoden i Round klassen. I metoden läggs monster i en lista
-                    playerHP = r.PlayRound(Hero.Heroes);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
 
-                    System.Console.WriteLine(Rounds.Count);
-                    System.Console.WriteLine(Round.MonstersInRound.Count);
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
                     Console.ReadLine();
                     //Debug
-                    
+                    Rounds.Dequeue();
                     break;
                 case 2:
                     Round.GetMonster(1);
                     //Denna metod i varje case hos switch casen gör samma sak
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 3:
                     Round.GetMonster(2);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 4:
                     Round.GetMonster(3);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 5:
                     Round.GetMonster(4);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 6:
                     Round.GetMonster(5);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 7:
                     Round.GetMonster(6);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 8:
                     Round.GetMonster(7);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 9:
                    Round.GetMonster(8);
+                   System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 case 10:
                     Round.GetMonster(9);
+                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
+                    playerHP -= r.PlayRound(Hero.Heroes);
+                    
+                    System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
+                    System.Console.WriteLine("hp = " + playerHP);
+                    Console.ReadLine();
+
+                    Rounds.Dequeue();
                     break;
                 //Switch case som checkar vilken runda det är som ska spelas. 
             }

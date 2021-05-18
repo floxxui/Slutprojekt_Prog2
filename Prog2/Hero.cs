@@ -9,6 +9,7 @@ namespace Prog2
         public static int Price{ get; set; }
         //hur mycket en hero kostar
         protected int damage = 1;
+        protected int defaultDamage;
         //hur mycket damage en hero gör
         protected int accuracy = 100;
         //hur hög accuracy en hero har
@@ -25,10 +26,17 @@ namespace Prog2
         public static List<Hero> Heroes{ get; set; } = new List<Hero>(); 
         //en lista med alla spelarens heroes. När en spelare köper en hero i shop klassen kommer en ny hero att läggas till i listan
 
-        public virtual int GetAttack()
+        public Hero()
         {
-            int cooldown = 60 / speed;
+            defaultDamage = damage;
+        }
+        public virtual int GetAttackDamage()
+        {
+            damage = defaultDamage;
+            System.Console.WriteLine(damage);
+            int cooldown = 50 / speed;
             damage = damage * cooldown;
+            Upgraded();
             return damage;
         }
         public virtual void Upgraded()

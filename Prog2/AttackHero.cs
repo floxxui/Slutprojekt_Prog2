@@ -7,6 +7,7 @@ namespace Prog2
         public AttackHero()
         {
             damage = 2;
+            defaultDamage = damage;
             effect = false;
             upgradeInfo = "Does 2 extra damage on monsters";
             Price = 40;

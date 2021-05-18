@@ -8,7 +8,7 @@ namespace Prog2
         //Random gör att man kan få ut ett random nummer, vilket i detta projekt används för att randomizea när hero'n kommer göra extra mycket damage och dubbelt så lite damage
         public RNGHero()
         {
-            
+            defaultDamage = damage;
         }
 
         public override void Upgraded()
