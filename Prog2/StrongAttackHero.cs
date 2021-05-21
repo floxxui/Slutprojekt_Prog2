@@ -13,5 +13,10 @@ namespace Prog2
             accuracy = 50;
             //Gör dubbeldamage från Attack hero men sänker accuracy till 50%
         }
+
+        public override void Upgraded()
+        {
+
+        }
     }
 }

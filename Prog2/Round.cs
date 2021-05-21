@@ -35,14 +35,14 @@ namespace Prog2
         public delegate Monster MonsterMkr();
 
         // En metod som matchar delegaten MonsterMkr
-        public static Monster srtrtjh()
+        public static Monster ReturnMonster()
         {
             return new Monster();
         }
 
         public static void GetMonster(int round)
         {
-            MonsterMkr u = srtrtjh;
+            MonsterMkr u = ReturnMonster;
             u();
 
             /*
