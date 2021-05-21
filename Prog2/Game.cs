@@ -9,7 +9,7 @@ namespace Prog2
         // public static int RoundCount{get; set;} = 1;
         private static bool roundsCreated = false;
         private Queue<int> Rounds = new Queue<int>();
-        private static int playerHP = 50;
+        private static int playerHp = 50;
         private Round r = new Round();
         public override GameState VisualiseMenu()
         //Overriden checkar i huvudklassen om det finns en metod med samma namn. I så fall kommer denna metod spelas istället ifall denna subklass försöker nås
@@ -99,7 +99,7 @@ namespace Prog2
                 }  
                 //Ser till att man inte kan komma utanför listan av alternativ. Om man försöker gå utanför nedåt så hamnar man längst upp i listan och tvärtom
 
-                if (playerHP <= 0)
+                if (playerHp <= 0)
                 {
                     state = GameState.gameLost;
                     break;
@@ -126,10 +126,10 @@ namespace Prog2
                     Round.GetMonster(0);
                     //Hämtar monster från metoden i Round klassen. I metoden läggs monster i en lista
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
 
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
                     //Debug
                     Rounds.Dequeue();
@@ -138,10 +138,10 @@ namespace Prog2
                     Round.GetMonster(1);
                     //Denna metod i varje case hos switch casen gör samma sak
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -149,10 +149,10 @@ namespace Prog2
                 case 3:
                     Round.GetMonster(2);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -160,10 +160,10 @@ namespace Prog2
                 case 4:
                     Round.GetMonster(3);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -171,10 +171,10 @@ namespace Prog2
                 case 5:
                     Round.GetMonster(4);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -182,10 +182,10 @@ namespace Prog2
                 case 6:
                     Round.GetMonster(5);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -193,10 +193,10 @@ namespace Prog2
                 case 7:
                     Round.GetMonster(6);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -204,10 +204,10 @@ namespace Prog2
                 case 8:
                     Round.GetMonster(7);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -215,10 +215,10 @@ namespace Prog2
                 case 9:
                    Round.GetMonster(8);
                    System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
@@ -226,10 +226,10 @@ namespace Prog2
                 case 10:
                     Round.GetMonster(9);
                     System.Console.WriteLine("Current monsters in list: " + Round.MonstersInRound.Count);
-                    playerHP -= r.PlayRound(Hero.Heroes);
+                    playerHp -= r.PlayRound(Hero.Heroes);
                     
                     System.Console.WriteLine("Amount of rounds left: " + Rounds.Count);
-                    System.Console.WriteLine("hp = " + playerHP);
+                    System.Console.WriteLine("hp = " + playerHp);
                     Console.ReadLine();
 
                     Rounds.Dequeue();
